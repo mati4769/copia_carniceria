@@ -1,0 +1,199 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f2ede4;
+    padding: 0;
+    margin: 0;
+}
+
+#encabezado{
+    background-color: #2c2c2c;
+    color: #e2574c;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid #7a1f1f;
+}
+
+#menu-principal ul{
+    list-style: none;
+
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    justify-content: center;
+}
+
+#menu-principal ul li a{
+    text-decoration: none;
+    color: #fdf6ec;
+    background-color: #b02e26;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+#contenido {
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.seccion{
+    background-color: #e8e2d8;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border-left: 4px solid #5c1414;
+}
+
+.tarjeta{
+    background-color: #fdf6ec;
+    border: 2px solid #7c4a25;
+    border-radius: 4px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.galeria{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.espacio-imagen{
+    width: 100%;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#pie{
+    background-color: #2c2c2c;
+    text-align: center;
+    padding: 15px;
+    color: #e2574c;
+}
+
+/* ===================== 6 REGLAS NUEVAS (se leen como nr(x numero)) =*/
+/* ===================== Y 19 ESTILOS NUEVOS =========================*/
+
+/* nr1 - Regla por id: banner de promoción general */
+#promocion{
+    background: repeating-linear-gradient(45deg, #b02e26, #b02e26 12px, #7a1f1f 12px, #7a1f1f 24px);
+    /*1 background shorthand+degradado crear lineas en la caja*/
+    color: #fdf6ec;
+    text-align: center;
+    padding: 18px;
+    font-size: 1.1em;
+    text-transform: uppercase;   /* 2 vuelve el texto en mayuscula */
+    letter-spacing: 1.5px;       /* 3 cambiar el espacio entre kas letras en el texto */
+    border-top: 3px solid #2c2c2c; /* 4 dibujar una linea en la parte superior del elemento */
+}
+ 
+/* nr2 - Regla por class: etiqueta de descuento sobre una herramienta específica */
+.etiqueta-descuento{
+    display: inline-block;       
+    background-color: #d4a017;   
+    color: #2c2c2c;              
+    font-size: 0.75em;           
+    font-weight: bold;           
+    padding: 3px 10px;           
+    border-radius: 12px;         
+    margin-left: 6px;            
+    animation: parpadeo 1.6s ease-in-out infinite;  /* 5 animar */
+}
+ 
+/* 6 @keyframes -> bloque especial que define los pasos de la animación*/
+@keyframes parpadeo{
+    0%, 100% { opacity: 1; }     /* 7 controlar la opacidad del elemento*/
+    50% { opacity: 0.45; }       
+}
+ 
+/* nr3 - Regla por id: sección "herramienta del mes" */
+#herramienta-destacada{
+    position: relative;          /* 8 controlar donde se coloca un elemento */
+    background-color: #fff8f0;   
+    border: 2px dashed #5c1414;  
+    padding: 30px 20px 20px;     
+    text-align: center;          
+    margin-bottom: 10px;         
+}
+ 
+/* 9 ::before -> pseudo-elemento, crea una "etiqueta" de texto sin escribirla en el HTML */
+#herramienta-destacada::before{
+    content: "★ Oferta del mes ★";   /* 10 define la estructura mediante etiquetas (solo existe dentro de ::before/::after) */
+    position: absolute;              
+    top: -14px;                      /* 11 controla la posicion vertical */
+    left: 50%;                       /* 12 para mover un elemento hacia la izquierda */
+    transform: translateX(-50%);     /* 13 cambiar la forma, el tamaño, la posicion o el giro de un elemento en la pantalla de manera visual */
+    background-color: #7a1f1f;       
+    color: #fdf6ec;                  
+    padding: 4px 14px;               
+    border-radius: 20px;             
+    font-size: 0.8em;                
+    letter-spacing: 1px;             
+}
+ 
+/* nr4 - Regla por class: aviso de tiempo limitado */
+.tiempo-limitado{
+    font-style: italic;                             /* 14 cambiar el estilo del texto entre normal, cursiva o inclinado */
+    color: #5c1414;                                   
+    font-size: 0.95em;                                 
+    line-height: 1.4;                               /* 15 controla el espacio vertical entre las lineas de un texto */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15); /* 16 sirve para añadir una sombra a las letras o palabras */
+}
+ 
+/* nr5 - Regla por etiqueta: resaltar precios en oferta con <mark> */
+mark{
+    background-color: #b02e26;   
+    color: #fdf6ec;              
+    padding: 2px 8px;            
+    border-radius: 3px;          
+    font-weight: bold;           
+}
+
+/* nr6 - Regla por class: caja para ver mas*/
+.ver-detalles{
+    background-color: #b02e26;   
+    color: #fdf6ec;              
+    padding: 15px;               
+    border-radius: 6px;          
+    text-align: center;          
+    margin-bottom: 10px;         
+    transition: background-color 0.4s ease, color 0.4s ease; /* 17 Sirve para cambiar el aspecto de un elemento de forma suave y fluida */
+    cursor: pointer;                                         /* 18 cambia la forma del puntero del raton a la mano con el dedo indice estirado */
+}
+ 
+/* 19 hover -> pseudo-clase, cambia el estilo cuando el mouse pasa por encima */
+.ver-detalles:hover{
+    background-color: #7a1f1f;
+    color: #fdf6ec;
+}
+/* ===================== TARJETAS DE PRODUCTO ===================== */
+.tarjeta-titulo{
+    margin: 10px 10px 4px;
+    color: #5c1414;
+    text-transform: capitalize;
+}
+
+.tarjeta-descripcion{
+    margin: 0 12px 10px;
+    font-size: 0.9em;
+    color: #4a3b32;
+}
+
+.tarjeta-precio{
+    margin: 0;
+    padding: 10px;
+    background-color: #b02e26;
+    color: #fdf6ec;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-top: 2px solid #7c4a25;
+}
+
+.tarjeta-precio span{
+    font-size: 0.6em;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
